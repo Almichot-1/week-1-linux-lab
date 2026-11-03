@@ -1,0 +1,1 @@
+Linux files can be located by name, and running processes by PID.

@@ -1,0 +1,23 @@
+lab$ mkdir -p ~/cloud-devops/week1 && cd ~/cloud-devops/week1 && pwd
+/root/cloud-devops/week1
+
+lab$ touch notes.txt && ls -l notes.txt
+-rw-r--r-- 1 root root 0 Nov  3 08:23 notes.txt
+
+lab$ printf '%s\n' 'Linux files can be located by name, and running processes by PID.' > notes.txt; cat notes.txt
+Linux files can be located by name, and running processes by PID.
+
+lab$ mkdir scripts && ls -d scripts/
+scripts/
+
+lab$ mv notes.txt scripts/ && ls scripts/ && test ! -e notes.txt && echo "Move verified"
+notes.txt
+Move verified
+
+lab$ find ~/cloud-devops/week1 -type f -name notes.txt
+/root/cloud-devops/week1/scripts/notes.txt
+
+lab$ sleep 180 & lab_pid=$!; jobs -l; kill -0 "$lab_pid" && echo "Running PID: $lab_pid"
+[1] 18
+[1]+    18 Running                 sleep 180 &
+Running PID: 18
